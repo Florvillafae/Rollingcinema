@@ -23,3 +23,25 @@ body{
       margin-top: 10px;
   }
 }
+
+@media (min-width: 1024px) and (max-width:1339px){
+  .img-detail{
+      height: 600px;
+      width: 500px;
+      padding-bottom: 50px;
+     
+  }
+}
+
+.text-style{
+  text-align: justify;
+}
+
+@media (min-width:1440px) {
+  .img-detail{
+      height: 500px;
+  }
+  .text-style{
+      margin-top: 50px;
+  }
+}
