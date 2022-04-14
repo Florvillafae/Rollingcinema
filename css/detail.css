@@ -1,0 +1,25 @@
+body{
+  background-color: #141414;
+}
+
+@media (min-width: 1024px) and (max-width:1338px){
+  .img-detail-movie{
+      height: 650px;
+      width: 500px;
+      padding-bottom: 50px;
+     
+  }
+}
+
+.text-style-movie{
+  text-align: justify;
+}
+
+@media (min-width:1339px) {
+  .img-detail-movie{
+      height: 500px;
+  }
+  .text-style-movie{
+      margin-top: 10px;
+  }
+}

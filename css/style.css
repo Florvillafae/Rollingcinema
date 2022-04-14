@@ -28,3 +28,17 @@ body{
     width: 25%;
   }
 }
+
+.img-transform:hover{
+  transform: scale(1.09);
+}
+
+
+.h-title-style{
+  color:#e5e5e5;
+}
+
+.h-title-style:hover{
+  color: white;
+  font-weight: bold;
+}
