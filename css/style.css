@@ -1,0 +1,30 @@
+body{
+  background-color: #141414;
+}
+
+
+/* NAVBAR */
+
+.a-hover:hover{
+  opacity: 0.5;
+}
+.cinema-Rolling-hover:hover{
+  transform: scale(1.19);
+}
+
+.reloj-style{
+  border: 1px solid black;
+  border-radius: 5px; 
+  text-align: center;
+  padding: 5px;  
+  color: white;
+  border: 1px solid white;
+  
+}
+
+@media screen and (max-width: 992px) {
+  .reloj-style{
+    margin-right: 300px;
+    width: 25%;
+  }
+}
