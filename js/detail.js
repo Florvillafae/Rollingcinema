@@ -31,3 +31,28 @@ const detailMovie = () => {
 }
 
 detailMovie();
+
+const getDetailData = () => {
+  const detailData = localStorage.getItem("infoSerie");
+  const getDetailDataObj = JSON.parse(detailData);
+
+  console.log(getDetailDataObj);
+  const serieDetail = document.getElementById("series-details");
+  const sectionDetail = `<section class="d-flex justify-content-center container">
+      <div>
+        <img class="w-100" src="${getDetailDataObj.image.original}" />
+        <br>
+        <h2 class="p-2 d-flex justify-content-center">Nombre de la serie: "${getDetailDataObj.name}"</h2>
+        <br>
+        <p class="text-align-center">${getDetailDataObj.summary}</p>
+        <br>
+        <h6> ${getDetailDataObj.genres}</h6>
+        <h6> ${getDetailDataObj.network.country.name} </h6>
+        <h6> ${getDetailDataObj.schedule.days} - ${getDetailDataObj.schedule.time} -  ${getDetailDataObj.network.name} </h6>
+
+        <a href="index.html">Return to Series</a href="index.html">
+      </div>
+    </section>`;
+  serieDetail.innerHTML = sectionDetail;
+};
+getDetailData();
