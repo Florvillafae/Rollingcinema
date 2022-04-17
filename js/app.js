@@ -25,15 +25,6 @@ const useApiDataMovie = async() => {
 useApiDataMovie();
 
 
-const setDetailDataMovie = async(id) => {
-  const resp = await fetch(`https://imdb-api.com/en/API/Title/k_gcfkdp58/${id}`)
-  const json = await resp.json()
-  const newJson = JSON.stringify(json)
-  
-  localStorage.setItem("infoMovie" , newJson)
-  
-  window.location.href = "/detail.html"
-}
 
 const getDataSerie = async() => {
   const resp = await fetch('https://api.tvmaze.com/shows')
@@ -50,10 +41,10 @@ const usarDataSerie = async() => {
   console.log(dataFilter)
   
   const dataMap = dataFilter.map(serieData => `  
-    <div class="swiper-slide img-transform"> 
-    <img onclick="setDetailData(${serieData.id})" class="img-adapted"src="${serieData.image.medium}" alt="">  
-    </div>`)
-
+  <div class="swiper-slide img-transform"> 
+  <img onclick="setDetailData(${serieData.id})" class="img-adapted"src="${serieData.image.medium}" alt="">  
+  </div>`)
+  
   console.log(dataMap)
   containerSeries.innerHTML = dataMap;
 }
@@ -68,3 +59,13 @@ const setDetailData = async(id) => {
   
   window.location.href = "/detail.html"
 } 
+
+const setDetailDataMovie = async(id) => {
+  const resp = await fetch(`https://imdb-api.com/en/API/Title/k_gcfkdp58/${id}`)
+  const json = await resp.json()
+  const newJson = JSON.stringify(json)
+  
+  localStorage.setItem("infoMovie" , newJson)
+  
+  window.location.href = "/detailMovies.html"
+}
