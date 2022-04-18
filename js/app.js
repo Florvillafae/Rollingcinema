@@ -1,5 +1,5 @@
 const getDataMovie = async() => {
-  const resp = await fetch('https://imdb-api.com/es/API/MostPopularMovies/k_gcfkdp58/')
+  const resp = await fetch('https://imdb-api.com/es/API/MostPopularMovies/k_dtvbualz/')
   const json = await resp.json();
   console.log(json)
   return (json.items)
@@ -61,7 +61,7 @@ const setDetailData = async(id) => {
 } 
 
 const setDetailDataMovie = async(id) => {
-  const resp = await fetch(`https://imdb-api.com/en/API/Title/k_gcfkdp58/${id}`)
+  const resp = await fetch(`https://imdb-api.com/en/API/Title/k_dtvbualz/${id}`)
   const json = await resp.json()
   const newJson = JSON.stringify(json)
   
