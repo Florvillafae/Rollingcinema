@@ -80,11 +80,11 @@ const getDataMovieRec = async() => {
 const useDataMovieRec = async() => {
   const data = await getDataMovieRec()  
   const containerSeries = document.getElementById('movies-recommended')
-  const dataFilter = data.filter(infoSerie => infoSerie.rank <= 10)
+  const dataFilter = data.filter(infoMovieRec => infoMovieRec.rank <= 10)
   console.log(dataFilter)  
-  const dataMap = dataFilter.map(serieData => `  
+  const dataMap = dataFilter.map(movieRecData => `  
     <div class="swiper-slide img-transform"> 
-    <img onclick="setDetailData(${serieData.id})" class="img-adapted"src="${serieData.image}" alt="">  
+    <img onclick="setDetailDataMovieRec('${movieRecData.id}')" class="img-adapted"src="${movieRecData.image}" alt="">  
     </div>`)
 
   containerSeries.innerHTML = dataMap;
@@ -92,7 +92,7 @@ const useDataMovieRec = async() => {
 useDataMovieRec();
 
 const setDetailDataMovieRec = async(id) => {
-  const resp = await fetch(`https://imdb-api.com/en/API/Top250Movies/k_dtvbualz/${id}`)
+  const resp = await fetch(`https://imdb-api.com/en/API/Title/k_dtvbualz/${id}`)
   const json = await resp.json()
   const newJson = JSON.stringify(json)
   
