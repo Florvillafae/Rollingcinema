@@ -1,5 +1,5 @@
 const getDataMovie = async() => {
-  const resp = await fetch('https://imdb-api.com/es/API/MostPopularMovies/k_gjyu2etu/')
+  const resp = await fetch('https://imdb-api.com/es/API/MostPopularMovies/k_0aha8b4p/')
   const json = await resp.json();
   console.log(json)
   return (json.items)
@@ -60,18 +60,9 @@ const setDetailData = async(id) => {
   window.location.href = "/detail.html"
 } 
 
-const setDetailDataMovie = async(id) => {
-  const resp = await fetch(`https://imdb-api.com/en/API/Title/k_gjyu2etu/${id}`)
-  const json = await resp.json()
-  const newJson = JSON.stringify(json)
-  
-  localStorage.setItem("infoMovie" , newJson)
-  
-  window.location.href = "/detailMovies.html"
-}
 
 const getDataMovieRec = async() => {
-  const resp = await fetch('https://imdb-api.com/en/API/Top250Movies/k_gjyu2etu/')
+  const resp = await fetch('https://imdb-api.com/en/API/Top250Movies/k_0aha8b4p/')
   const json = await resp.json();
   console.log(json)
   return (json.items)
@@ -83,20 +74,22 @@ const useDataMovieRec = async() => {
   const dataFilter = data.filter(infoMovieRec => infoMovieRec.rank <= 10)
   console.log(dataFilter)  
   const dataMap = dataFilter.map(movieRecData => `  
-    <div class="swiper-slide img-transform"> 
-    <img onclick="setDetailDataMovieRec('${movieRecData.id}')" class="img-adapted"src="${movieRecData.image}" alt="">  
-    </div>`)
-
+  <div class="swiper-slide img-transform"> 
+  <img onclick="setDetailDataMovie('${movieRecData.id}')" class="img-adapted"src="${movieRecData.image}" alt="">  
+  </div>`)
+  
   containerSeries.innerHTML = dataMap;
 }
 useDataMovieRec();
 
-const setDetailDataMovieRec = async(id) => {
-  const resp = await fetch(`https://imdb-api.com/en/API/Title/k_gjyu2etu/${id}`)
+
+const setDetailDataMovie = async(id) => {
+  const resp = await fetch(`https://imdb-api.com/en/API/Title/k_0aha8b4p/${id}`)
   const json = await resp.json()
   const newJson = JSON.stringify(json)
   
-  localStorage.setItem("infoMovieRec" , newJson)
+  localStorage.setItem("infoMovie" , newJson)
+ 
   
   window.location.href = "/detailMovies.html"
 }
