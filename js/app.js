@@ -69,3 +69,34 @@ const setDetailDataMovie = async(id) => {
   
   window.location.href = "/detailMovies.html"
 }
+
+const getDataMovieRec = async() => {
+  const resp = await fetch('https://imdb-api.com/en/API/Top250Movies/k_dtvbualz/')
+  const json = await resp.json();
+  console.log(json)
+  return (json.items)
+}
+
+const useDataMovieRec = async() => {
+  const data = await getDataMovieRec()  
+  const containerSeries = document.getElementById('movies-recommended')
+  const dataFilter = data.filter(infoSerie => infoSerie.rank <= 10)
+  console.log(dataFilter)  
+  const dataMap = dataFilter.map(serieData => `  
+    <div class="swiper-slide img-transform"> 
+    <img onclick="setDetailData(${serieData.id})" class="img-adapted"src="${serieData.image}" alt="">  
+    </div>`)
+
+  containerSeries.innerHTML = dataMap;
+}
+useDataMovieRec();
+
+const setDetailDataMovieRec = async(id) => {
+  const resp = await fetch(`https://imdb-api.com/en/API/Top250Movies/k_dtvbualz/${id}`)
+  const json = await resp.json()
+  const newJson = JSON.stringify(json)
+  
+  localStorage.setItem("infoMovieRec" , newJson)
+  
+  window.location.href = "/detailMovies.html"
+}
