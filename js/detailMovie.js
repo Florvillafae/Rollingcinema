@@ -31,6 +31,7 @@ const detailMovie = () => {
 }
 detailMovie();
 
+
 const getIdDataMovieRec = () => {
   const idDataMovie = localStorage.getItem('infoMovieRec')
   const idDataObj = JSON.parse(idDataMovie)
