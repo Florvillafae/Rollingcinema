@@ -6,8 +6,6 @@ const getDataMovie = async() => {
   
 }
 
-
-
 const useApiDataMovie = async() => {
   const data = await getDataMovie()
   console.log(data)
