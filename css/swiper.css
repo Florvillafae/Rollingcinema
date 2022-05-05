@@ -13,11 +13,6 @@ body {
   padding: 0;
 }
 
-.swiper {
-  width: 100%;
-  height: 300px;
-}
-
 .swiper-slide {
   text-align: center;
   font-size: 18px;
@@ -49,8 +44,3 @@ body {
   background: white;
 }
 
-@media (min-width: 320px) and (max-width: 600px){
-  .swiper{
-    height: 150px;
-  }
-}

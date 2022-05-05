@@ -1,12 +1,10 @@
 const getDataMovie = async() => {
-  const resp = await fetch('https://imdb-api.com/es/API/MostPopularMovies/k_0aha8b4p/')
+  const resp = await fetch('https://imdb-api.com/es/API/MostPopularMovies/k_p97dka5t/')
   const json = await resp.json();
   console.log(json)
   return (json.items)
   
 }
-
-
 
 const useApiDataMovie = async() => {
   const data = await getDataMovie()
@@ -62,7 +60,7 @@ const setDetailData = async(id) => {
 
 
 const getDataMovieRec = async() => {
-  const resp = await fetch('https://imdb-api.com/en/API/Top250Movies/k_0aha8b4p/')
+  const resp = await fetch('https://imdb-api.com/en/API/Top250Movies/k_p97dka5t/')
   const json = await resp.json();
   console.log(json)
   return (json.items)
@@ -84,7 +82,7 @@ useDataMovieRec();
 
 
 const setDetailDataMovie = async(id) => {
-  const resp = await fetch(`https://imdb-api.com/en/API/Title/k_0aha8b4p/${id}`)
+  const resp = await fetch(`https://imdb-api.com/en/API/Title/k_p97dka5t/${id}`)
   const json = await resp.json()
   const newJson = JSON.stringify(json)
   
